@@ -1,0 +1,55 @@
+<!doctype html>
+{% load i18n %}
+{% load static %}
+<html>
+    <head>
+        <title>Cool Auction</title>
+        <link rel="stylesheet" href="{% static 'Auction/libs/materialize/materialize.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'Auction/styles.css' %}" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <script src="{% static 'Auction/libs/materialize/materialize.js' %}"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="blue darken-2">
+                <div class="nav-wrapper">
+                    <a href="/index/" class="brand-logo">{% trans "Yet Another Auction Site" %}</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/index/">{% trans "Home" %}</a></li>
+                        <li><a href="/browse/">{% trans "Browse" %}</a></li>
+                        <li><a href="/language/">{% trans "Change Language" %}</a></li>
+                        <li><a href="/currency/">{% trans "Change Currency" %}</a></li>
+
+                        {% if user.is_authenticated %}
+                            <li><a href="/create/">{% trans "Create Auction" %}</a></li>
+                            <li><a href="/profile/">{{ user.username }}</a></li>
+                            <li><a href="/logout/">{% trans "Logout" %}</a></li>
+                        {% else %}
+                            <li><a href="/login/">{% trans "Log in" %}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <div id="title_style">
+                <br>
+                {% block title %}
+                {% endblock %}
+                <br><br>
+            </div>
+
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
