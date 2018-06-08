@@ -27,7 +27,7 @@ SECRET_KEY = '7zljjhku&*wot@u@jx6jh%=fq@1getv8u6cbiykz3!6i)tmxh4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'188.225.77.100']
 
 
 # Application definition
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django_crontab'
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
