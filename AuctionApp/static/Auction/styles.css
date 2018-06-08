@@ -5,3 +5,20 @@ li.error {
 li.info {
     background: #5f5
 }
+
+.search-form form {
+    margin-bottom: 0;
+}
+
+.search-form .input-field {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.auction-list .card p {
+    line-height: 24px;
+}
+
+.auction-list .card-action a:hover {
+    color: #0D47A1 !important;
+}

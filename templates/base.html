@@ -10,14 +10,13 @@
 
         <script src="{% static 'Auction/libs/materialize/materialize.js' %}"></script>
     </head>
-    <body>
+    <body class="grey lighten-3">
         <header>
             <nav class="blue darken-2">
                 <div class="nav-wrapper">
                     <a href="/index/" class="brand-logo">{% trans "Yet Another Auction Site" %}</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="/index/">{% trans "Home" %}</a></li>
-                        <li><a href="/browse/">{% trans "Browse" %}</a></li>
+                        <li><a href="/browse/">{% trans "Home" %}</a></li>
                         <li><a href="/language/">{% trans "Change Language" %}</a></li>
                         <li><a href="/currency/">{% trans "Change Currency" %}</a></li>
 
@@ -41,10 +40,8 @@
                 </ul>
             {% endif %}
 
-            <div id="title_style">
-                {% block title %}
-                {% endblock %}
-            </div>
+            {% block title %}
+            {% endblock %}
 
             {% block content %}
             {% endblock %}

@@ -32,7 +32,7 @@ class CreateAuctionForm(forms.Form):
 
 
 class ConfirmationForm(forms.Form):
-    print('form')
+    print('confirmation form')
     #CHOICES = [(x, x) for x in (_("Yes"), _("No"))]
     #option = forms.ChoiceField(choices=CHOICES)
 

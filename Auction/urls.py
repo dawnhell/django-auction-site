@@ -16,17 +16,15 @@ Including another URLconf
 from AuctionApp.views import *
 from django.conf.urls import url, include
 
-# enable admin
 from django.contrib import admin
 admin.autodiscover()
 from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
-
     url(r'^register/', register),
     url(r'^login/', auth_views.login, name='login'),
-    url(r'^logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^logout/', auth_views.logout, {'next_page': '/browse'}, name='logout'),
     url(r'^profile/', view_profile),
 
     url(r'^create/', CreateAuction.as_view()),
@@ -46,5 +44,5 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^', index, name="index"),
+    url(r'^', browse, name="browse"),
 ]

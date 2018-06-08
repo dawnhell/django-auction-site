@@ -1,25 +1,45 @@
 {%  extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Browse Auctions" %}{% endblock %}
+{% block title %}
+{% endblock %}
 
 {% block content %}
+    <div class="search-form card-panel z-depth-2">
+        <form method="post" action="/browse/" class="row valign-wrapper">
+            {% csrf_token %}
+            <div class="input-field col s9">
+                <input id="search-input" type="text" name="search" value="">
+                <label for="search-input">{% trans "Search for auctions" %}</label>
+            </div>
+            <button type="submit" value="Submit" class="btn waves-effect waves-light blue darken-2 col s3">
+                {% trans 'Search' %}
+            </button>
+        </form>
+    </div>
 
-    <!-- search bar on top of the site -->
-    <form method="post" action="/browse/">
-        {% csrf_token %}
-        <input type="text" name="search" value="" placeholder={% trans "Search for auctions" %}>
-        <button type="submit" value="Submit">Search</button>
-    </form>
+    <h5 class="center-align">{% trans 'Current auctions: ' %}</h5>
 
-    <br><br>
-
-    {% for auction in auctions %}
-        {% if auction.state == 'active' %}
-            <a href="/browse/{{ auction.id }}/">{{ auction.title }}</a>
-            <p>{% trans "Seller: " %} {{ auction.seller }}</p>
-            <p>{% trans "State: " %} {{ auction.state }}</p>
-            <hr>
-        {% endif %}
-    {% endfor %}
+    <div class="auction-list row">
+        {% for auction in auctions %}
+            {% if auction.state == 'active' %}
+                <div class="col s12 m4">
+                    <div class="card small hoverable">
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">
+                                {{ auction.title }}
+                            </span>
+                            <p>{{ auction.description }}</p>
+                            <p><strong>{% trans "Seller: " %}</strong>{{ auction.seller }}</p>
+                            <p><strong>{% trans "State: " %}</strong>{{ auction.state }}</p>
+                            <span><strong>{% trans 'Auction deadline: ' %}</strong>{{ auction.deadline }}</span>
+                        </div>
+                        <div class="card-action">
+                            <a class="blue-text text-darken-3" href="/browse/{{ auction.id }}/">{% trans 'Details' %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {%  endblock %}

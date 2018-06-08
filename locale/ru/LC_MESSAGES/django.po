@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 17:15+0300\n"
+"POT-Creation-Date: 2018-06-08 19:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,27 +114,23 @@ msgstr "Супер Аукцион"
 msgid "Home"
 msgstr "Главная"
 
-#: templates/base.html:20
-msgid "Browse"
-msgstr "Найти"
-
-#: templates/base.html:21 templates/change_language.html:6
+#: templates/base.html:20 templates/change_language.html:6
 msgid "Change Language"
 msgstr "Изменить язык"
 
-#: templates/base.html:22 templates/change_currency.html:6
+#: templates/base.html:21 templates/change_currency.html:6
 msgid "Change Currency"
 msgstr "Изменить валюту"
 
-#: templates/base.html:25
+#: templates/base.html:24
 msgid "Create Auction"
 msgstr "Создать аукцион"
 
-#: templates/base.html:27
+#: templates/base.html:26
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:29
+#: templates/base.html:28
 msgid "Log in"
 msgstr "Войти"
 
@@ -146,7 +142,7 @@ msgstr "Поставить"
 msgid "Description: "
 msgstr "Описание: "
 
-#: templates/bid_auction.html:18 templates/browse.html:20
+#: templates/bid_auction.html:18 templates/browse.html:32
 msgid "Seller: "
 msgstr "Продавец: "
 
@@ -166,17 +162,29 @@ msgstr "Аукцион заканчивается"
 msgid "Please note that you are bidding in currency"
 msgstr "Пожалуйста, проверьте выбранную валюту"
 
-#: templates/browse.html:4
-msgid "Browse Auctions"
-msgstr "Найти аукционы"
-
-#: templates/browse.html:11
+#: templates/browse.html:13
 msgid "Search for auctions"
-msgstr "Найти аукционы"
+msgstr "Поиск аукциона"
+
+#: templates/browse.html:16
+msgid "Search"
+msgstr "Найти"
 
 #: templates/browse.html:21
+msgid "Current auctions: "
+msgstr "Текущие аукционы: "
+
+#: templates/browse.html:33
 msgid "State: "
 msgstr "Состояние: "
+
+#: templates/browse.html:34
+msgid "Auction deadline: "
+msgstr "Аукцион заканчивается: "
+
+#: templates/browse.html:37
+msgid "Details"
+msgstr "Подробнее"
 
 #: templates/browse_auction.html:11
 msgid "Edit Description"
