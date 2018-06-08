@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.views.generic import RedirectView
+from django.views.generic.base import TemplateView
 
 from AuctionApp.views import *
 from django.conf.urls import url, include
@@ -46,5 +46,5 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^', RedirectView.as_view(url='/browse/')),
+    url(r'$^', TemplateView.as_view(template_name='browse.html'), name='browse'),
 ]
