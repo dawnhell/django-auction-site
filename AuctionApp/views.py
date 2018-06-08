@@ -27,10 +27,6 @@ from AuctionApp.forms import *
 from AuctionApp import models
 
 
-def index(request):
-    return render(request, "index.html")
-
-
 def view_profile(request):
     if not request.user.is_authenticated():
         messages.add_message(request, messages.ERROR, _("You must be logged in to use this feature."))

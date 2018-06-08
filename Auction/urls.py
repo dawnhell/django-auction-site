@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.views.generic import RedirectView
+
 from AuctionApp.views import *
 from django.conf.urls import url, include
 
@@ -44,5 +46,5 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^', browse, name="browse"),
+    url(r'^', RedirectView.as_view(url='/browse/')),
 ]
