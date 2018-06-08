@@ -346,7 +346,7 @@ def change_language(request):
 
 def change_currency(request):
     if request.method == 'POST':
-        redirect_response = HttpResponseRedirect(reverse('index'))
+        redirect_response = HttpResponseRedirect(reverse('browse'))
         new_currency = request.POST.get('currency')
         redirect_response.set_cookie('currency', new_currency)
         messages.add_message(request, messages.INFO, _('Currency changed to: {}') .format(new_currency))

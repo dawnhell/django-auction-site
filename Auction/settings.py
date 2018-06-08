@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'browse'
 
 # add your host email credentials here to send emails to users
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
