@@ -1,23 +1,40 @@
 {%  extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Change Language" %}{% endblock %}
+{% block title %}
+    <h5>
+        {% trans "Change Language" %}
+    </h5>
+{% endblock %}
 
 {% block content %}
 
-    <form action="/i18n/setlang/" method="post">
-        {% csrf_token %}
-        <input name="next" type="hidden" value="/" />
-        <select name="language">
-            {% get_current_language as LANGUAGE_CODE %}
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
-            {% for language in languages %}
-                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                    {{ language.name_local }} ({{ language.code }})
-                </option>
-            {% endfor %}
-        </select>
-        <button type="submit" value="submit">Ok</button>
-    </form>
+    <div class="row">
+        <form action="/i18n/setlang/" method="post" class="input-field col s4">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="/" />
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+
+                <option value="" disabled selected>Choose your option</option>
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+
+            <button class="btn waves-effect waves-light blue darken-2 col s3" type="submit" value="submit">Ok</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+        });
+    </script>
+
 {%  endblock %}

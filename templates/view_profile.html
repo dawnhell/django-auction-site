@@ -1,39 +1,52 @@
 {%  extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{{ user.username }}{% trans "'s profile" %}{% endblock %}
+{% block title %}
+    <h5>
+        <strong>{{ user.username }}</strong>{% trans "'s profile" %}
+    </h5>
+{% endblock %}
 
 {% block content %}
 
-    <!-- change email -->
-    <h2>Change Email address</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        <p> Old email: {{ user.email }}</p>
-        <label for="new_email">New Email: </label>
-        <input type="email" name="new_email" value="" id="new_email">
-        <br>
+    <div class="row">
+        <div class="col s5">
+            <h6>{% trans 'Change Email address' %}</h6>
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>{% trans 'Old email: ' %}<strong>{{ user.email }}</strong></p>
 
-        <input type="hidden" name="change_request" value="email">
-        <button type="submit" value="Change Email">{% trans "Change Email" %}</button>
-    </form>
+                <div class="input-field">
+                    <label for="new_email">{% trans 'New Email: ' %}</label>
+                    <input type="email" name="new_email" value="" id="new_email" class="validate">
+                    <input type="hidden" name="change_request" value="email">
+                </div>
 
-    <br><br><br>
+                <button type="submit" value="Change Email" class="btn waves-effect waves-light blue darken-2 col s4">
+                    {% trans "Change Email" %}
+                </button>
+            </form>
+        </div>
 
-    <!-- change password -->
-    <h2>Change Password</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        <label for="new_password1">New Password: </label>
-        <input type="password" name="new_password1" value="" id="new_password1">
-        <br>
-        <label for="new_password2">New Password again: </label>
-        <input type="password" name="new_password2" value="" id="new_password2">
-        <br>
+        <div class="col s5 offset-l2 offset-m2 offset-s2">
+            <h6>{% trans 'Change Password' %}</h6>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="input-field">
+                    <label for="new_password1">{% trans 'New Password: ' %}</label>
+                    <input type="password" name="new_password1" value="" id="new_password1">
+                </div>
+                <div class="input-field">
+                    <label for="new_password2">{% trans 'New Password again: ' %}</label>
+                    <input type="password" name="new_password2" value="" id="new_password2">
+                </div>
 
-        <input type="hidden" name="change_request" value="password">
-        <button type="submit" value="Change Password">{% trans "Change Password" %}</button>
-    </form>
-
+                <input type="hidden" name="change_request" value="password">
+                <button type="submit" value="Change Password" class="btn waves-effect waves-light blue darken-2 col s4">
+                    {% trans "Change Password" %}
+                </button>
+            </form>
+        </div>
+    </div>
 
 {%  endblock %}

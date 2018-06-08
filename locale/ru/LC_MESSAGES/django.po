@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-07 17:09+0300\n"
+"POT-Creation-Date: 2018-06-08 17:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,7 +88,8 @@ msgstr "Продавец изменить описание. Пожалуйста
 #: AuctionApp/views.py:280
 msgid ""
 "You must have a . separator and no more than two decimals, example: '1.43'"
-msgstr "Число должно иметь . (точку) и не более двую цифр после нее, например: '1.43'"
+msgstr ""
+"Число должно иметь . (точку) и не более двую цифр после нее, например: '1.43'"
 
 #: AuctionApp/views.py:326
 msgid "bid registered"
@@ -97,7 +98,9 @@ msgstr "Ставка зарегистрирована"
 #: AuctionApp/views.py:330
 msgid ""
 "The new bid must be at least 0.01 more than the current bid or minimum bid"
-msgstr "Ставка должна быть как минимум на 0.01 больше, чем текущая ставки или минимальная ставка"
+msgstr ""
+"Ставка должна быть как минимум на 0.01 больше, чем текущая ставки или "
+"минимальная ставка"
 
 #: AuctionApp/views.py:352
 msgid "Currency changed to: {}"
@@ -115,11 +118,11 @@ msgstr "Главная"
 msgid "Browse"
 msgstr "Найти"
 
-#: templates/base.html:21 templates/change_language.html:4
+#: templates/base.html:21 templates/change_language.html:6
 msgid "Change Language"
 msgstr "Изменить язык"
 
-#: templates/base.html:22 templates/change_currency.html:4
+#: templates/base.html:22 templates/change_currency.html:6
 msgid "Change Currency"
 msgstr "Изменить валюту"
 
@@ -267,14 +270,34 @@ msgstr "Создать пользователя"
 msgid "Register"
 msgstr "Зарегистрироваться"
 
-#: templates/view_profile.html:4
+#: templates/view_profile.html:6
 msgid "'s profile"
 msgstr " профиль"
 
-#: templates/view_profile.html:18
+#: templates/view_profile.html:14
+msgid "Change Email address"
+msgstr "Изменить почту"
+
+#: templates/view_profile.html:17
+msgid "Old email: "
+msgstr "Стараяя почта: "
+
+#: templates/view_profile.html:20
+msgid "New Email: "
+msgstr "Новая почта: "
+
+#: templates/view_profile.html:26
 msgid "Change Email"
 msgstr "Изменить почту"
 
-#: templates/view_profile.html:35
+#: templates/view_profile.html:32 templates/view_profile.html:46
 msgid "Change Password"
 msgstr "Изменить пароль"
+
+#: templates/view_profile.html:36
+msgid "New Password: "
+msgstr "Новый пароль: "
+
+#: templates/view_profile.html:40
+msgid "New Password again: "
+msgstr "Пароль еще раз: "
