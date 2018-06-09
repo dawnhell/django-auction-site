@@ -22,3 +22,7 @@ li.info {
 .auction-list .card-action a:hover {
     color: #0D47A1 !important;
 }
+
+.brand-logo {
+    padding: 0 20px !important;
+}

@@ -165,6 +165,7 @@ def browse(request):
     else:
         auctions = models.Auction.objects.all()
 
+    print(auctions)
     return render(request, 'browse.html', {'auctions': auctions})
 
 

@@ -3,10 +3,11 @@
 {% load static %}
 <html>
     <head>
-        <title>Cool Auction</title>
+        <title>Help Search</title>
         <link rel="stylesheet" href="{% static 'Auction/libs/materialize/materialize.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'Auction/styles.css' %}" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 
         <script src="{% static 'Auction/libs/materialize/materialize.js' %}"></script>
     </head>
@@ -14,7 +15,7 @@
         <header>
             <nav class="blue darken-2">
                 <div class="nav-wrapper">
-                    <a href="/browse/" class="brand-logo">{% trans "Yet Another Auction Site" %}</a>
+                    <a href="/browse/" class="brand-logo">HSearch</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="/browse/">{% trans "Home" %}</a></li>
                         <li><a href="/language/">{% trans "Change Language" %}</a></li>
